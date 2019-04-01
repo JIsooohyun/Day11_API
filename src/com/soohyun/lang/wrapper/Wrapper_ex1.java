@@ -13,19 +13,25 @@ public class Wrapper_ex1 {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("주민등록번호를 입력하세요");
 		String jumin = sc.next(); //970212-1234567
-		String age = jumin.substring(0, 2);
+		String age = jumin.substring(7, 8);
+		String nai = jumin.substring(0, 2);
 		String state = jumin.substring(2, 4);
-		int state2 = Integer.parseInt(state);
-		int age1 = Integer.parseInt(age);
 		
+		int state2 = Integer.parseInt(state); //봄,여름, 가을
+		int age1 = Integer.parseInt(age); //1과 3부분 구별
+		int nai1 = Integer.parseInt(nai); // 97년생인지 확인
 		
-		//나이 구하는 식
-		if(age1/10 == 0) {
-			int total = 2019-(2000+age1);
-			System.out.println("나이 : "+total);
+	
+		
+		//나이 구하는 식 주민등록번호 1, 2, 3, 4로 구별해야 한다. 
+		if(age1 == 1 || age1 == 2) {
+			int age2 = 2019-(1900+nai1);
+			System.out.println("나이 : "+age2);
+		}else if (age1 == 3 || age1 == 5){
+			int age2 = 2019-(2000+nai1);
+			System.out.println("나이 : "+age2);
 		}else {
-			int total = 2019-(1900+age1);
-			System.out.println("나이 : "+total);
+			System.out.println("다시 입력");
 		}
 		
 		if(state2 >=3 && state2<=5) {
