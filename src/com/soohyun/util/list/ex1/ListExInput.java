@@ -13,7 +13,8 @@ public class ListExInput {
 		ar = new ArrayList();
 	}
 	
-	public ArrayList setInfo(ArrayList<Member> ar) {
+	//fix1과 다르게        //매개변수를 받지 않고 똑같은 형태를 나타낼려면?
+	public Member setInfo() {  
 		Member member = new Member();
 		System.out.println("이름을 입력하세요");
 		String name = sc.next();
@@ -24,9 +25,8 @@ public class ListExInput {
 		member.setAge(age);
 		
 		
-		ar.add(member);
-		
-		return ar;
+		return member;
 	}
 	
 }
+

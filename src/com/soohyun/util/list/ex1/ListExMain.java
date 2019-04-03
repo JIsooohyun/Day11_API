@@ -27,8 +27,8 @@ public class ListExMain {
 			select = sc.nextInt();
 			
 			if(select == 1) {
-				
-				ar = li.setInfo(ar);
+				Member m = li.setInfo();
+				ar.add(m);
 			}else if(select == 2) {
 				lv.view(ar);
 			}else {
