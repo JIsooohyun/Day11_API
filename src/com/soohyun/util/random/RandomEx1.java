@@ -49,19 +49,22 @@ public class RandomEx1 {
 		//1~45번까지의 숫자를 6개
 		int [] lotto = new int[6];
 		Random rd = new Random();
-		int i, j;
+		
 
-		for(i=0; i<10; i++) {
-			int num = rd.nextInt(45)+1;
-			int num2 = rd.nextInt(45)+1;
-			lotto[i] = num;
-			lotto[i+1] = num2;
-			
-			if(lotto[i] == lotto[i+1]) {
-				System.out.println("다시 입력");
-				
+		for(int i=0; i<lotto.length; i++) {
+			lotto[i] = rd.nextInt(45)+1;
+			for(int j=0; j<i; j++) {
+				if(lotto[i]==lotto[j]) {
+					j--;
+					
+				}
 			}
+
 		}
+		for(int i=0; i<lotto.length; i++) {
+			System.out.println(lotto[i]);
+		}
+
 	}
 
 
@@ -74,7 +77,7 @@ public class RandomEx1 {
 			num = rd.nextInt(45);
 			System.out.println(num+1);
 		}
-		
+
 	}
 
 	public static void main(String[] args) {
