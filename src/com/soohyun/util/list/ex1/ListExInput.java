@@ -12,13 +12,19 @@ public class ListExInput {
 		sc = new Scanner(System.in);
 		ar = new ArrayList();
 	}
-	public ArrayList setInfo(ArrayList ar) {
+	
+	public ArrayList setInfo(ArrayList<Member> ar) {
+		Member member = new Member();
 		System.out.println("이름을 입력하세요");
 		String name = sc.next();
-		ar.add(name);
+		member.setName(name);
+		
 		System.out.println("나이를 입력하세요");
 		int age = sc.nextInt();
-		ar.add(age);
+		member.setAge(age);
+		
+		
+		ar.add(member);
 		
 		return ar;
 	}

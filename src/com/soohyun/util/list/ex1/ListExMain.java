@@ -14,7 +14,7 @@ public class ListExMain {
 		//   모든정보출력
 		//3.종료
 		Scanner sc = new Scanner(System.in);
-		ArrayList ar = new ArrayList();  //두개의 타입을 하나로 만들 수 있는  class를 만든다. 
+		ArrayList<Member> ar = new ArrayList<>();  //두개의 타입을 하나로 만들 수 있는  class를 만든다. 뒷 부분은 생략해도 된다.
 		ListExInput li = new ListExInput();
 		ListExView lv= new ListExView();
 		int select=0;
