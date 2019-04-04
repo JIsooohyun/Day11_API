@@ -10,6 +10,7 @@ public class WeatherMain {
 		for(int i=0; i<weathers.length; i++) {
 			System.out.println("city : "+weathers[i].getCity());
 			System.out.println("state : "+weathers[i].getState());
+			
 		}
 	}
 
