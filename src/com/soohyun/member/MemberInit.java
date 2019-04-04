@@ -13,13 +13,13 @@ public class MemberInit {
 
 	// 이름 , id, pw, age, level = 0, 1, 2
 	public MemberInit() {
-		StringBuffer sb = new StringBuffer();
+		StringBuffer sb = new StringBuffer(); //문자열을 추가하거나 변경할 때 사용하는 자료형
 		sb.append("iu, iu, iu, 26, 1,");
 		sb.append("choa, choa, choa, 30, 2,");
 		sb.append("suji, suji, suji, 23, 2,");
 		sb.append("hani, hani, hani, 15, 0");
 
-		Members = sb.toString();  //문자열로 바꿔주는 작업
+		Members = sb.toString();  //문자열로 바꿔주는 메서드 toString()
 
 		sc = new Scanner(System.in);
 
@@ -31,7 +31,7 @@ public class MemberInit {
 		HashMap<String, Member> map = new HashMap<String, Member>();
 		Member member = null;
 
-		StringTokenizer st = new StringTokenizer(Members, ",");
+		StringTokenizer st = new StringTokenizer(Members, ",");  //파싱하는 부분
 
 		while (st.hasMoreTokens()) {  // 다음요소가 있습니까?????
 			member = new Member();
@@ -40,7 +40,7 @@ public class MemberInit {
 			member.setPw(st.nextToken().trim());
 			member.setAge(Integer.parseInt(st.nextToken().trim()));
 			member.setLevel(Integer.parseInt(st.nextToken().trim()));
-			map.put(member.getId(), member);
+			map.put(member.getId(), member); //id()를 key값으로 넣고 member를 value로 정한다.
 		}
 
 		return map;
@@ -71,7 +71,7 @@ public class MemberInit {
 		System.out.println("PW를 입력하세요");
 		String pw = sc.next();
 		
-		member = map.get(id);   //멤버의 아이디값을 넣어준다.
+		member = map.get(id);   //멤버의 아이디값을 넣어준다.  map.get(key)  -> 멤버의 키값을 돌려준다. 
 		if(member != null) { // 아이디값이 널이 아니면
 			if(!member.getPw().equals(pw)) { //pw가 맞으면 시행하지 않고
 				member = null; //틀리면 null이 들어간다. 

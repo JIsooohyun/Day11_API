@@ -14,7 +14,7 @@ public class MemberView {
 		while(it.hasNext()) {
 			String key = it.next();
 			Member value = map.get(key);//멤버가 들어가 있는곳에서 key값으로 꺼내라
-			this.view(member);
+			this.view(member); //자기자신을 호출해주는 this를 사용한다 
 			/*
 			System.out.println("이름 : "+value.getName());
 			System.out.println("Id : "+value.getId());
